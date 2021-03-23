@@ -432,6 +432,11 @@ textarea {
     text-align: center;
   }
 
+
+.message {
+  width: 100%;
+}
+
   .title {
     font-size: 2.4rem;
   }
