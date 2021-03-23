@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width, user-scalable=no initial-scale=1.0')
+    title The Collective Wall
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap' rel='stylesheet')
+    script(src='https://kit.fontawesome.com/9cecdf5b6a.js' crossorigin='anonymous')
+    link(rel="stylesheet", href="/style/app.css")
+  body
+    nav.wrapper.navigation
+      div
+        a(href="/")
+          h1.title  The Collective Wall
+          h2.sub-title Leave your ideas on the wall
+      div
+        if page === 'index'
+          a(href="/saved-ideas").ghost-btn.mr Saved Ideas 
+          button#open-form.btn Scratch the wall
+        else 
+          a(href="/").ghost-btn.p1 Go to Wall 
+
+    block contentPage
+
+    footer.wrapper.footer
+      p Made with ❤️ by 
+        a(href="https://twitter.com/jesusrobot_").ghost-btn @jesusrobot_
+    if page === 'index'
+      script(src="/dist/runtime.bundle.js")
+      script(src="/dist/axios.bundle.js")
+      script(src="/dist/app.bundle.js")
+    else  
+      script(src="/dist/runtime.bundle.js")
+      script(src="/dist/axios.bundle.js")
+      script(src="/dist/savedPosts.bundle.js") 

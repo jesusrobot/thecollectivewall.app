@@ -1,0 +1,33 @@
+extends masterPage
+
+block contentPage
+  form#form.wrapper(action="/" method="POST")
+    fieldset.field 
+      label Your idea
+      textarea#content.input-text
+    fieldset.field
+      label Your signature
+      input#signature.input-text(type="text" autocomplete="off")
+    fieldset.field.send
+      input#send.btn.send-button(type="submit", value="Scratch")
+      .errors#errors
+  .wall.wrapper
+    p.wall-details In the collective wall there are 
+      span#count #{posts.length} 
+      | ideas
+    #publications.publications.columns-3
+      
+    #pagination.pagination
+      div 
+        p.label Posts per page
+        select#numberPosts
+          option( value="8") 8 Posts
+          option( value="12") 12 Posts
+          option( value="16" selected) 16 Posts
+          option( value="20") 20 Posts
+          option( value="24") 24 Posts
+          option( value="all") All Posts
+      div
+        button#previous 👈️
+        span#info
+        button#next 👉️
